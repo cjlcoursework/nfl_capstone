@@ -1,7 +1,40 @@
 nfl_capstone
 ==============================
 
-NFL statistics capstone 
+------------
+    Project: NFL statistics capstone 
+    Phase:   Data Wrangling
+------------
+
+Manifest
+------------
+    Raw data located in s3:
+
+        - nfl_teams.csv,  -- list of all NFL teasm and abbreviations
+        - nfl_teams_scraped.csv,  -- another list of all NFL teasm and abbreviations scraped from html
+        - spreadspoke_scores.csv  -- historical scores from all NFL games - one row per game
+
+        - nflplaybyplay2009to2016/NFL Play by Play 2009-2016 (v3).csv,   -- gameplay data one row per play
+        - nflplaybyplay2009to2016/NFL Play by Play 2009-2017 (v4).csv,
+        - nflplaybyplay2009to2016/NFL Play by Play 2009-2018 (v5).csv,
+
+        - games.csv,   -- not used yet
+        - nfl_stadiums.csv,  -- not use yet
+
+
+    Source code:
+        - data/s3utils.py -- to get raw data from s3
+        - features/wrangling/get_metrics.py -- to collect metrics from a generic dataset
+        - features/wrangling/database_loader.py -- abstract sink that writes to csv or Postgres
+
+       
+    Notebooks:
+        - 01-cjl-review.ipynb   -- initial review and cleanup
+        - 02-cjl-clean.ipynb    -- more extensive cleaning
+        - 03-cjl-clean.ipynb   -- merge and conform spreadspoke_scores.csv with NFL Play by Play*.csv
+
+------------
+
 
 Project Organization
 ------------
