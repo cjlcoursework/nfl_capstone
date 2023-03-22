@@ -23,7 +23,8 @@ Manifest
 
 
     Source code:
-        - data/s3utils.py -- to get raw data from s3
+        - data/s3utils.py -- used to get raw data from s3
+        - data/configurations.py -- a place for schemas, and any other future configurations
         - features/wrangling/get_metrics.py -- to collect metrics from a generic dataset
         - features/wrangling/database_loader.py -- abstract sink that writes to csv or Postgres
 
