@@ -8,9 +8,12 @@ __pycache__/
 # data
 *.parquet
 *.csv
+.DS_Store
 
 # Distribution / packaging
 .Python
+data/raw/
+date/interim/
 env/
 build/
 develop-eggs/
