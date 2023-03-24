@@ -1,10 +1,57 @@
-nfl_capstone
+Springboard Data Science Capstone 2
 ==============================
 
 ------------
     Project: NFL statistics capstone 
+    Author: Chris Lomeli
+    Cohort:  January 2023
     Phase:   Data Wrangling
 ------------
+
+
+
+During an NFL football game the offensive coaching staff would like to predict the next best play to call for each situation that comes up
+
+### Approach
+1. Gather the data from s3 or API
+2. Stage to the local data directory that does not get uploaded to git
+2. Clean the data 
+3. Create a **metrics** dataset, somewhat like pandas_profiling, but not generalized for public use
+4. Clean and verify that the various datasets will join to one another
+5. Normalize the data into facts and dimensions so that it can also land in a data lake and be available for this and other uses.
+6. profile the fact dataset and use it to perform EDA, feature engineering and modeling
+
+### Project phases
+- [x] Data Wrangling - current submission
+- [ ] EDA - TBD
+- [ ] Feature engineering - TBD
+- [ ] Modeling - TBD
+
+
+### Sources
+Nextgen stats scrapped from nflverse -- https://github.com/nflverse
+<br>
+Static Gameplay data: https://www.kaggle.com/code/rtatman/data-cleaning-challenge-handling-missing-values
+<br>
+Historical scores: https://www.kaggle.com/code/kerneler/starter-nfl-scores-and-betting-data-80af2656-8
+<br>
+Team data: https://www.kaggle.com/code/kerneler/starter-nfl-scores-and-betting-data-80af2656-8
+
+
+### Additional sources
+- from sportsreference.nfl.boxscore import Boxscores, Boxscore
+  Boxscores(1,2020).games
+
+
+### Getting Started
+- The notebooks are currently configured to pull static raw data from a public AWS s3 bucket
+  - the other configuration option is the nflverse API
+- The metrics data is configured to output to csv files
+  - the other option is Postgres, which I am using
+
+- order of operation - the notebooks depend on one another and should be run in order
+
+
 
 Manifest
 ------------
@@ -14,7 +61,7 @@ Manifest
         - nfl_teams_scraped.csv,  -- another list of all NFL teasm and abbreviations scraped from html
         - spreadspoke_scores.csv  -- historical scores from all NFL games - one row per game
 
-        - nflplaybyplay2009to2016/NFL Play by Play 2009-2016 (v3).csv,   -- gameplay data one row per play
+        - nflplaybyplay2009to2016/NFL Play by Play 2009-2016 (v3).csv,   -- gameplay data one row per play - todo: get this data from the nflverse API
         - nflplaybyplay2009to2016/NFL Play by Play 2009-2017 (v4).csv,
         - nflplaybyplay2009to2016/NFL Play by Play 2009-2018 (v5).csv,
 
@@ -33,6 +80,8 @@ Manifest
         - 01-cjl-review.ipynb   -- initial review and cleanup
         - 02-cjl-clean.ipynb    -- more extensive cleaning
         - 03-cjl-clean.ipynb   -- merge and conform spreadspoke_scores.csv with NFL Play by Play*.csv
+
+
 
 ------------
 
